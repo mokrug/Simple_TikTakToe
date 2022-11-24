@@ -6,8 +6,14 @@
     <Application.Resources>
         <ResourceDictionary>
             <Style x:Key="CheckboxStyle" TargetType="CheckBox">
-                <Setter Property="BorderBrush"  Value="Black" />
+                <Setter Property="BorderThickness" Value="0" />
+                <Setter Property="IsChecked" Value="True"/>
+                <Setter Property="Background" Value="Coral"></Setter>
+              
                
+
+
+
 
             </Style>
         </ResourceDictionary>

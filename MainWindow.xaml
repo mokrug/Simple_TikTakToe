@@ -18,17 +18,56 @@
                 <RowDefinition Height="*"></RowDefinition>
                 <RowDefinition Height="*"></RowDefinition>
             </Grid.RowDefinitions>
-            <CheckBox Style="{StaticResource CheckboxStyle}" Grid.Row="0" Grid.Column="0" VerticalAlignment="Stretch"></CheckBox>
-            <CheckBox Style="{StaticResource CheckboxStyle}" Grid.Row="0" Grid.Column="1" VerticalAlignment="Stretch"></CheckBox>
-            <CheckBox Style="{StaticResource CheckboxStyle}" Grid.Row="0" Grid.Column="2" VerticalAlignment="Stretch"></CheckBox>
-            <CheckBox Style="{StaticResource CheckboxStyle}" Grid.Row="1" Grid.Column="0" VerticalAlignment="Stretch"></CheckBox>
-            <CheckBox Style="{StaticResource CheckboxStyle}" Grid.Row="1" Grid.Column="1" VerticalAlignment="Stretch"></CheckBox>
-            <CheckBox Style="{StaticResource CheckboxStyle}" Grid.Row="1" Grid.Column="2" VerticalAlignment="Stretch"></CheckBox>
-            <CheckBox Style="{StaticResource CheckboxStyle}" Grid.Row="2" Grid.Column="0" VerticalAlignment="Stretch"></CheckBox>
-            <CheckBox Style="{StaticResource CheckboxStyle}" Grid.Row="2" Grid.Column="1" VerticalAlignment="Stretch"></CheckBox>
-            <CheckBox Style="{StaticResource CheckboxStyle}" Grid.Row="2" Grid.Column="2" VerticalAlignment="Stretch"></CheckBox>
+            <CheckBox Style="{StaticResource CheckboxStyle}" Grid.Row="0" Grid.Column="0" VerticalAlignment="Stretch">
+                <CheckBox.LayoutTransform>
+                    <ScaleTransform ScaleX="10" ScaleY="10" />
+                </CheckBox.LayoutTransform>
+            </CheckBox>
+            <CheckBox Style="{StaticResource CheckboxStyle}" Grid.Row="0" Grid.Column="1" VerticalAlignment="Stretch">
+                <CheckBox.LayoutTransform>
+                    <ScaleTransform ScaleX="10" ScaleY="10" />
+                </CheckBox.LayoutTransform>
+            </CheckBox>
+            <CheckBox Style="{StaticResource CheckboxStyle}" Grid.Row="0" Grid.Column="2" VerticalAlignment="Stretch">
+                <CheckBox.LayoutTransform>
+                    <ScaleTransform ScaleX="10" ScaleY="10" />
+                </CheckBox.LayoutTransform>
+            </CheckBox>
+            <CheckBox Style="{StaticResource CheckboxStyle}" Grid.Row="1" Grid.Column="0" VerticalAlignment="Stretch">
+                <CheckBox.LayoutTransform>
+                    <ScaleTransform ScaleX="10" ScaleY="10" />
+                </CheckBox.LayoutTransform>
+            </CheckBox>
+            <CheckBox Style="{StaticResource CheckboxStyle}" Grid.Row="1" Grid.Column="1" VerticalAlignment="Stretch">
+                <CheckBox.LayoutTransform>
+                    <ScaleTransform ScaleX="10" ScaleY="10" />
+                </CheckBox.LayoutTransform>
+            </CheckBox>
+            <CheckBox Style="{StaticResource CheckboxStyle}" Grid.Row="1" Grid.Column="2" VerticalAlignment="Stretch">
+                <CheckBox.LayoutTransform>
+                    <ScaleTransform ScaleX="10" ScaleY="10" />
+                </CheckBox.LayoutTransform>
+            </CheckBox>
+            <CheckBox Style="{StaticResource CheckboxStyle}" Grid.Row="2" Grid.Column="0" VerticalAlignment="Stretch">
+                <CheckBox.LayoutTransform>
+                    <ScaleTransform ScaleX="10" ScaleY="10" />
+                </CheckBox.LayoutTransform>
+            </CheckBox>
+            <CheckBox Style="{StaticResource CheckboxStyle}" Grid.Row="2" Grid.Column="1" VerticalAlignment="Stretch">
+                <CheckBox.LayoutTransform>
+                    <ScaleTransform ScaleX="10" ScaleY="10" />
+                </CheckBox.LayoutTransform>
+            </CheckBox>
+            <CheckBox Style="{StaticResource CheckboxStyle}" Grid.Row="2" Grid.Column="2" VerticalAlignment="Stretch">
+                <CheckBox.LayoutTransform>
+                    <ScaleTransform ScaleX="10" ScaleY="10" />
+                </CheckBox.LayoutTransform>
+            </CheckBox>
 
 
         </Grid>
+        <DockPanel>
+            <Button Content="Restart"></Button>
+        </DockPanel>
     </StackPanel>
 </Window>
