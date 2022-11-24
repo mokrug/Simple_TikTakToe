@@ -8,13 +8,30 @@
             <Image Source="Images\O.png" x:Shared="false"  x:Key="OImage" />
             <Image Source="Images\X.png" x:Shared="false"  x:Key="XImage"/>
 
+            <Style x:Key="TransparentButton" TargetType="{x:Type Button}">
+                <Setter Property="Background" Value="Green"/>
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="{x:Type Button}">
+                            <Border Background="{TemplateBinding Background}">
+                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+
+
             <!-- Style der für alle gilt -->
-            <Style x:Key="BasicButtonStyle" TargetType="Button">
+            <Style x:Key="BasicButtonStyle" TargetType="Button" BasedOn="{StaticResource TransparentButton}">
                 <Setter Property="HorizontalAlignment" Value="Center"/>
                 <Setter Property="Height" Value="100"/>
                 <Setter Property="Width" Value="100"/>
                 <Setter Property="Margin" Value="30"/>
                 <EventSetter Event="Click" Handler="Change_Image" />
+                <Setter Property="Background" Value="Transparent" />
+                <EventSetter Event="MouseEnter" Handler="Button_MouseEnter"/>
+                <EventSetter Event="MouseLeave" Handler="Button_MouseLeave"/>
             </Style>
 
             <!-- Basis Style für Line -->

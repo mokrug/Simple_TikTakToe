@@ -31,11 +31,40 @@ namespace Simple_TikTakToe
                     b.Content = FindResource("OImage") as Image;
                 }
 
+                b.Opacity= 1;
                 b.IsEnabled = false;
                 counter++;
             }
 
 
+        }
+
+        private void Button_MouseEnter(object sender, System.Windows.Input.MouseEventArgs e)
+        {
+            Button? b = sender as Button;
+
+            if (b != null)
+            {
+                if (counter % 2 == 0)
+                {
+                    b.Content = FindResource("XImage") as Image;
+                }
+                else
+                {
+                    b.Content = FindResource("OImage") as Image;
+                }
+                b.Opacity = 0.5;
+            }
+        }
+
+        private void Button_MouseLeave(object sender, System.Windows.Input.MouseEventArgs e)
+        {
+            Button? b = sender as Button;
+
+            if (b != null && b.Opacity != 1)
+            {
+                b.Content = null;
+            }
         }
     }
 }
