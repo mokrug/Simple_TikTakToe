@@ -25,6 +25,37 @@
                 <Setter Property="Content" Value="{StaticResource OImage}"/>
             </Style>
 
+            <!-- Basis Style für Line -->
+            <Style x:Key="lineStyle" TargetType="Line">
+                <Setter Property="Stroke" Value="Black" />
+                <Setter Property="Stretch" Value="Fill" />
+                <Setter Property="Grid.ZIndex" Value="100" />
+                <Setter Property="StrokeDashArray" Value="1,2" />
+            </Style>
+            
+            <!-- Style für horizontalLine basierend auf Basis Style -->
+            <Style x:Key="horizontalLineStyle" TargetType="Line" BasedOn="{StaticResource lineStyle}">
+                <Setter Property="X2" Value="1" />
+                <Setter Property="VerticalAlignment" Value="Bottom" />
+                <Setter Property="Grid.ColumnSpan" 
+                    Value="{Binding   
+                                Path=ColumnDefinitions.Count,  
+                                RelativeSource={RelativeSource AncestorType=Grid}}"/>
+            </Style>
+
+            <!-- Style für vertical basierend auf Basis Style -->
+            <Style x:Key="verticalLineStyle" TargetType="Line" BasedOn="{StaticResource lineStyle}">
+                <Setter Property="Y2" Value="1" />
+                <Setter Property="HorizontalAlignment" Value="Right" />
+                <Setter Property="Grid.RowSpan"   
+                    Value="{Binding   
+                                Path=RowDefinitions.Count,  
+                                RelativeSource={RelativeSource AncestorType=Grid}}"/>
+
+            </Style>
+
+
+
         </ResourceDictionary>
     </Application.Resources>
 </Application>
