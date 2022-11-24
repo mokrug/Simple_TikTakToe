@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Simple_TikTakToe"
         mc:Ignorable="d"
-        Title="MainWindow" Height="500" Width="500">
+        Title="MainWindow" Height="600" Width="500" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
     <StackPanel  x:Name="fullGrid">
         <Grid>
             <Grid.ColumnDefinitions>
@@ -32,11 +32,9 @@
 
             <Line Grid.Column="0" Style="{StaticResource verticalLineStyle}"/>
             <Line Grid.Column="1" Style="{StaticResource verticalLineStyle}"/>
-            <Line Grid.Column="2" Style="{StaticResource verticalLineStyle}"/>
 
             <Line Grid.Row="0" Style="{StaticResource horizontalLineStyle}"/>
             <Line Grid.Row="1" Style="{StaticResource horizontalLineStyle}"/>
-            <Line Grid.Row="2" Style="{StaticResource horizontalLineStyle}"/>
             
         </Grid>
         <DockPanel>
