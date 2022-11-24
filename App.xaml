@@ -21,7 +21,7 @@
             </Style>
 
             <!-- Style der für O gilt -->
-            <Style x:Key="XButton" TargetType="Button" BasedOn="{StaticResource BasicButtonStyle}">
+            <Style x:Key="OButton" TargetType="Button" BasedOn="{StaticResource BasicButtonStyle}">
                 <Setter Property="Content" Value="{StaticResource OImage}"/>
             </Style>
 
