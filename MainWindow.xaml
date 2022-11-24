@@ -38,7 +38,7 @@
             
         </Grid>
         <DockPanel>
-            <Button Content="Restart"></Button>
+            <Button Width="100" Margin="40" Content="Restart"></Button>
         </DockPanel>
     </StackPanel>
 </Window>
