@@ -8,5 +8,6 @@ namespace Simple_TikTakToe
 {
     internal class GameLogic
     {
+
     }
 }
