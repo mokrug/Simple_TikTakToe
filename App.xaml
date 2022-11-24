@@ -13,17 +13,26 @@
                 <Setter Property="HorizontalAlignment" Value="Center"/>
                 <Setter Property="Height" Value="100"/>
                 <Setter Property="Width" Value="100"/>
+                <EventSetter Event="Click" Handler="Change_Image" />
+                <Setter Property="Content">
+                    <Setter.Value>
+                        <ContentControl>
+                            <Image x:Name="ButtonImage" />
+                        </ContentControl>
+                    </Setter.Value>
+                </Setter>
+                
             </Style>
 
-            <!-- Style der für X gilt -->
+            <!-- Style der für X gilt --><!--
             <Style x:Key="XButton" TargetType="Button" BasedOn="{StaticResource BasicButtonStyle}">
-                <Setter Property="Content" Value="{StaticResource OImage}"/>
+                <Setter Property="Content" Value="{StaticResource XImage}"/>
             </Style>
 
-            <!-- Style der für O gilt -->
+            --><!-- Style der für O gilt --><!--
             <Style x:Key="OButton" TargetType="Button" BasedOn="{StaticResource BasicButtonStyle}">
                 <Setter Property="Content" Value="{StaticResource OImage}"/>
-            </Style>
+            </Style>-->
 
             <!-- Basis Style für Line -->
             <Style x:Key="lineStyle" TargetType="Line">

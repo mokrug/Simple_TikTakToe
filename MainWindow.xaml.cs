@@ -26,21 +26,5 @@ namespace Simple_TikTakToe
             InitializeComponent();
         }
 
-        private void Button_MouseDown(object sender, MouseButtonEventArgs e)
-        {
-            Button? b = sender as Button;
-
-            if (b != null)
-            {
-                Style? btnImage = this.FindResource("XButton") as Style;
-
-                if(btnImage != null)
-                {
-                    b.Style = btnImage;
-                }
-
-            }
-
-        }
     }
 }
