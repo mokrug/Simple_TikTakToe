@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Simple_TikTakToe"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="500" Width="500">
     <StackPanel  x:Name="fullGrid">
         <Grid>
             <Grid.ColumnDefinitions>
@@ -18,15 +18,17 @@
                 <RowDefinition Height="*"></RowDefinition>
                 <RowDefinition Height="*"></RowDefinition>
             </Grid.RowDefinitions>
-            <Button Grid.Row="0" Grid.Column="0">1</Button>
-            <Button Grid.Row="0" Grid.Column="1">2</Button>
-            <Button Grid.Row="0" Grid.Column="2">3</Button>
-            <Button Grid.Row="1" Grid.Column="0">4</Button>
-            <Button Grid.Row="1" Grid.Column="1">5</Button>
-            <Button Grid.Row="1" Grid.Column="2">6</Button>
-            <Button Grid.Row="2" Grid.Column="0">7</Button>
-            <Button Grid.Row="2" Grid.Column="1">8</Button>
-            <Button Grid.Row="2" Grid.Column="2">9</Button>
+            <Button Style="{StaticResource Button}" Grid.Row="0" Grid.Column="0">1</Button>
+            <Button Style="{StaticResource Button}" Grid.Row="0" Grid.Column="1">2</Button>
+            <Button Style="{StaticResource Button}" Grid.Row="0" Grid.Column="2">3</Button>
+            
+            <Button Style="{StaticResource Button}" Grid.Row="1" Grid.Column="0">4</Button>
+            <Button Style="{StaticResource Button}" Grid.Row="1" Grid.Column="1">5</Button>
+            <Button Style="{StaticResource Button}" Grid.Row="1" Grid.Column="2">6</Button>
+            
+            <Button Style="{StaticResource Button}" Grid.Row="2" Grid.Column="0">7</Button>
+            <Button Style="{StaticResource Button}" Grid.Row="2" Grid.Column="1">8</Button>
+            <Button Style="{StaticResource Button}" Grid.Row="2" Grid.Column="2">9</Button>
         </Grid>
         <DockPanel>
             <Button Content="Restart"></Button>

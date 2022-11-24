@@ -11,7 +11,8 @@
             <!-- Style der für alle gilt -->
             <Style x:Key="BasicButtonStyle" TargetType="Button">
                 <Setter Property="HorizontalAlignment" Value="Center"/>
-
+                <Setter Property="Height" Value="100"/>
+                <Setter Property="Width" Value="100"/>
             </Style>
 
             <!-- Style der für X gilt -->
