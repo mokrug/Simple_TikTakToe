@@ -10,10 +10,6 @@
                 <Setter Property="IsChecked" Value="True"/>
                 <Setter Property="Background" Value="Coral"></Setter>
               
-               
-
-
-
 
             </Style>
         </ResourceDictionary>
