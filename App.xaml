@@ -5,18 +5,25 @@
              StartupUri="MainWindow.xaml">
     <Application.Resources>
         <ResourceDictionary>
-            <Style x:Key="CheckboxStyle" TargetType="Button">
+            <Image Source="Images\O.png"  x:Key="OImage"/>
+            <Image Source="Images\X.png"  x:Key="XImage"/>
+
+            <!-- Style der für alle gilt -->
+            <Style x:Key="BasicButtonStyle" TargetType="Button">
                 <Setter Property="HorizontalAlignment" Value="Center"/>
-                
-
-
-
-
-
-
-
 
             </Style>
+
+            <!-- Style der für X gilt -->
+            <Style x:Key="XButton" TargetType="Button" BasedOn="{StaticResource BasicButtonStyle}">
+                <Setter Property="Content" Value="{StaticResource OImage}"/>
+            </Style>
+
+            <!-- Style der für O gilt -->
+            <Style x:Key="XButton" TargetType="Button" BasedOn="{StaticResource BasicButtonStyle}">
+                <Setter Property="Content" Value="{StaticResource OImage}"/>
+            </Style>
+
         </ResourceDictionary>
     </Application.Resources>
 </Application>

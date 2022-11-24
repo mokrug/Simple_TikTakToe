@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -23,6 +24,23 @@ namespace Simple_TikTakToe
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void Button_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            Button? b = sender as Button;
+
+            if (b != null)
+            {
+                Style? btnImage = this.FindResource("XButton") as Style;
+
+                if(btnImage != null)
+                {
+                    b.Style = btnImage;
+                }
+
+            }
+
         }
     }
 }
