@@ -13,6 +13,7 @@
                 <Setter Property="HorizontalAlignment" Value="Center"/>
                 <Setter Property="Height" Value="100"/>
                 <Setter Property="Width" Value="100"/>
+                <Setter Property="Margin" Value="30"/>
                 <EventSetter Event="Click" Handler="Change_Image" />
                 <Setter Property="Content">
                     <Setter.Value>
@@ -38,8 +39,8 @@
             <Style x:Key="lineStyle" TargetType="Line">
                 <Setter Property="Stroke" Value="Black" />
                 <Setter Property="Stretch" Value="Fill" />
+                <Setter Property="StrokeThickness" Value="3"/>
                 <Setter Property="Grid.ZIndex" Value="100" />
-                <Setter Property="StrokeDashArray" Value="1,2" />
             </Style>
             
             <!-- Style für horizontalLine basierend auf Basis Style -->
