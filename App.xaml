@@ -5,8 +5,8 @@
              StartupUri="MainWindow.xaml">
     <Application.Resources>
         <ResourceDictionary>
-            <Image Source="Images\O.png"  x:Key="OImage"/>
-            <Image Source="Images\X.png"  x:Key="XImage"/>
+            <Image Source="Images\O.png" x:Shared="false"  x:Key="OImage" />
+            <Image Source="Images\X.png" x:Shared="false"  x:Key="XImage"/>
 
             <!-- Style der für alle gilt -->
             <Style x:Key="BasicButtonStyle" TargetType="Button">
@@ -15,25 +15,7 @@
                 <Setter Property="Width" Value="100"/>
                 <Setter Property="Margin" Value="30"/>
                 <EventSetter Event="Click" Handler="Change_Image" />
-                <Setter Property="Content">
-                    <Setter.Value>
-                        <ContentControl>
-                            <Image x:Name="ButtonImage" />
-                        </ContentControl>
-                    </Setter.Value>
-                </Setter>
-                
             </Style>
-
-            <!-- Style der für X gilt --><!--
-            <Style x:Key="XButton" TargetType="Button" BasedOn="{StaticResource BasicButtonStyle}">
-                <Setter Property="Content" Value="{StaticResource XImage}"/>
-            </Style>
-
-            --><!-- Style der für O gilt --><!--
-            <Style x:Key="OButton" TargetType="Button" BasedOn="{StaticResource BasicButtonStyle}">
-                <Setter Property="Content" Value="{StaticResource OImage}"/>
-            </Style>-->
 
             <!-- Basis Style für Line -->
             <Style x:Key="lineStyle" TargetType="Line">
