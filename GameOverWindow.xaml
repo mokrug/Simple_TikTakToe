@@ -1,0 +1,23 @@
+﻿<Window x:Class="Simple_TikTakToe.GameOverWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Simple_TikTakToe"
+        mc:Ignorable="d"
+        Title="GameOverWindow" Height="200" Width="300" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" >
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <StackPanel  Grid.Row="1">
+            <Button Height="40" Width="80" x:Name="RestartGameButton" Click="RestartGameButton_Click">Restart</Button>
+            <Button Height="40" Width="80"  x:Name="EndGameButton" Click="EndGameButton_Click">Close Game</Button>
+        </StackPanel>
+        <TextBlock Grid.Row="0" TextAlignment="Center" Text="{Binding gamefinishedreason}" FontSize="30" FontWeight="Bold"></TextBlock>
+    </Grid>
+</Window>

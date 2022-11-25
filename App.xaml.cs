@@ -70,6 +70,6 @@ namespace Simple_TikTakToe
             {
                 b.Content = null;
             }
-        }
+        }          
     }
 }

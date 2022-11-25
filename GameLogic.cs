@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Navigation;
 
 namespace Simple_TikTakToe
 {
@@ -10,7 +13,7 @@ namespace Simple_TikTakToe
     {
         public static event EventHandler<byte> GameOverEvent;
 
-
+       
         int[,] playfield = new int[3, 3];
         List<int> results = new();
         int spielzug;
@@ -21,7 +24,7 @@ namespace Simple_TikTakToe
             spielzug = 0;
         }
 
-        public void zahl_eintragen(string buttonName, bool isX)
+        public  void zahl_eintragen(string buttonName, bool isX)
         {
             // Bei X 10 eintragen, bei O 100
             int eintragen;
@@ -61,7 +64,7 @@ namespace Simple_TikTakToe
             spielzug++;
         }
 
-        void ergebnisse_überprüfen()
+         void ergebnisse_überprüfen()
         {
             // Geht jede reihe horizontal ab und addiert die 3 zahlen
             for (int y = 0; y < 3; y++)
@@ -125,7 +128,7 @@ namespace Simple_TikTakToe
             results.Clear();
         }
 
-        void emptyArray()
+        async void emptyArray()
         {
             // Geht jede reihe horizontal ab und setzt 0
             for (int y = 0; y < 3; y++)
@@ -139,17 +142,36 @@ namespace Simple_TikTakToe
 
         private void CircleWon()
         {
-            GameOverEvent.Invoke(this, 1);
+            // opens a Popup Window with specific Message
+              
+            GameOverWindow gameover = new GameOverWindow();
+            gameover.gamefinishedreason = "Circle won the game!!!";
+            gameover.ShowDialog();
+
+
         }
 
         private void XWon()
         {
-            GameOverEvent.Invoke(this, 0);
+            // opens a Popup Window with specific Message
+                     
+            GameOverWindow gameover = new GameOverWindow();
+            gameover.gamefinishedreason = "X won the game!!!";
+            gameover.ShowDialog();
+
         }
 
         private void Draw()
         {
-            GameOverEvent.Invoke(this, 8);
+            // opens a Popup Window with specific Message
+                   
+            GameOverWindow gameover = new GameOverWindow();
+            gameover.gamefinishedreason = "Draw, nobody won!!!";
+            gameover.ShowDialog();
+
         }
+
+
+
     }
 }
