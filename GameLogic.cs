@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace Simple_TikTakToe
 {
-    internal class GameLogic
+    public class GameLogic
     {
         int[,] playfield = new int[3, 3];           
         List<int> results;                         
         int spielzug = 0;
 
-        GameLogic()
+        public GameLogic()
         {
             emptyArray();
         }
