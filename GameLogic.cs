@@ -23,7 +23,8 @@ namespace Simple_TikTakToe
 
         public void zahl_eintragen(string buttonName, bool isX)
         {
-            int eintragen = 0;
+            // Bei X 10 eintragen, bei O 100
+            int eintragen;
             if (isX)
             {
                 eintragen = 10;
@@ -33,7 +34,8 @@ namespace Simple_TikTakToe
                 eintragen = 100;
             }
 
-            if (buttonName == "Btn1") { playfield[0, 0] = eintragen; }
+            // Button1 -> Feld [0,0] 
+            if      (buttonName == "Btn1") { playfield[0, 0] = eintragen; }
             else if (buttonName == "Btn2") { playfield[0, 1] = eintragen; }
             else if (buttonName == "Btn3") { playfield[0, 2] = eintragen; }
 
@@ -49,13 +51,14 @@ namespace Simple_TikTakToe
                 throw new Exception("Konnte den Button keinem Feld zuweisen");
             }
 
+            // frühestens nach spielzug 4 
             if (spielzug > 3)
             {
                 ergebnisse_überprüfen();
             }
 
+            // nächster Spielzug
             spielzug++;
-
         }
 
         void ergebnisse_überprüfen()
@@ -101,20 +104,24 @@ namespace Simple_TikTakToe
             if (results.Contains(300))
             {
                 CircleWon();
+                spielzug = 0;
             }
             else if (results.Contains(30))
             {
                 XWon();
+                spielzug = 0;
             }
-            else if (spielzug > 9)
+            else if (spielzug > 7)
             {
                 Draw();
+                spielzug = 0;
             }
             else
             {
                 // weiterspielen
             }
 
+            // Liste clearen für nächsten durchlauf
             results.Clear();
         }
 

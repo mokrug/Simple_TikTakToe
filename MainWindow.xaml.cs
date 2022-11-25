@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection.Emit;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -22,28 +23,44 @@ namespace Simple_TikTakToe
     /// </summary>
     public partial class MainWindow : Window
     {
-
-
         public MainWindow()
         {
             InitializeComponent();
-            GameLogic.GameOverEvent += GameOverHandler;
+            GameLogic.GameOverEvent += GameOverHandler; 
+            
         }
 
         // event handler
-        public static void GameOverHandler(object sender, byte decider)
+        public void GameOverHandler(object sender, byte decider)
         {
-            if (decider == 0)
+            // Neuen style setzen der opaccity von allen sachen im Hintergrund auf 0,5 setz
+            
+            
+            // Entscheidung Gewinner -> Text ändern
+            TextBlock? winner = FindName("GameOverText") as TextBlock;
+
+            if (winner != null)
             {
-                // X gewonnen
-            }
-            else if (decider == 1)
-            {
-                // Kreis Gewonnen
-            }
-            else
-            {
-                //untenschieden
+                // 
+                if (decider == 0)
+                {
+                    // X gewonnen
+                    winner.Text = "X has won";
+                    
+                }
+                else if (decider == 1)
+                {
+                    // Kreis Gewonnen
+                    winner.Text = "O has won";
+                }
+                else
+                {
+                    //untenschieden
+                    winner.Text = "Draw";
+                }
+
+                // TextBlock aktivieren
+                winner.Visibility = Visibility.Visible;
             }
         }
 
