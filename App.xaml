@@ -71,6 +71,7 @@
                 <Setter Property="VerticalAlignment" Value="Center" />
                 <Setter Property="Background" Value="Gray" />
                 <Setter Property="Panel.ZIndex" Value="100"/>
+                <Setter Property="Padding" Value="20" />
             </Style>
 
 
