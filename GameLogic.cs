@@ -27,7 +27,7 @@ namespace Simple_TikTakToe
                 int xzahl = 0;
                 for (int x = 0; x < 3; x++)
                 {
-                    xzahl = playfield[y, x];
+                    xzahl += playfield[y, x];
                 }
                 results.Add(xzahl);
             }
@@ -38,7 +38,7 @@ namespace Simple_TikTakToe
                 int yzahl = 0;
                 for (int y = 0; y < 3; y++)
                 {
-                    yzahl = playfield[y, x];
+                    yzahl += playfield[y, x];
                 }
                 results.Add(yzahl);
             }
@@ -47,13 +47,14 @@ namespace Simple_TikTakToe
             int diagonalen = 0;
             for (int y = 0; y < 3; y++)
             {
-                diagonalen = playfield[y, y];
+                diagonalen += playfield[y, y];
             }
             results.Add(diagonalen);
 
+            diagonalen = 0;
             for (int y = 3; y > 0; y--)
             {
-                diagonalen = playfield[y, y];
+                diagonalen += playfield[y, y];
             }
             results.Add(diagonalen);
 
