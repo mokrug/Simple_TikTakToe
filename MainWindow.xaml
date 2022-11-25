@@ -18,17 +18,17 @@
                 <RowDefinition Height="*"></RowDefinition>
                 <RowDefinition Height="*"></RowDefinition>
             </Grid.RowDefinitions>
-            <Button Style="{StaticResource BasicButtonStyle}" Grid.Row="0" Grid.Column="0"></Button>
-            <Button Style="{StaticResource BasicButtonStyle}" Grid.Row="0" Grid.Column="1"></Button>
-            <Button Style="{StaticResource BasicButtonStyle}" Grid.Row="0" Grid.Column="2"></Button>
+            <Button Name="Btn1" Style="{StaticResource BasicButtonStyle}" Grid.Row="0" Grid.Column="0"></Button>
+            <Button Name="Btn2" Style="{StaticResource BasicButtonStyle}" Grid.Row="0" Grid.Column="1"></Button>
+            <Button Name="Btn3" Style="{StaticResource BasicButtonStyle}" Grid.Row="0" Grid.Column="2"></Button>
 
-            <Button Style="{StaticResource BasicButtonStyle}" Grid.Row="1" Grid.Column="0"></Button>
-            <Button Style="{StaticResource BasicButtonStyle}" Grid.Row="1" Grid.Column="1"></Button>
-            <Button Style="{StaticResource BasicButtonStyle}" Grid.Row="1" Grid.Column="2"></Button>
+            <Button Name="Btn4" Style="{StaticResource BasicButtonStyle}" Grid.Row="1" Grid.Column="0"></Button>
+            <Button Name="Btn5" Style="{StaticResource BasicButtonStyle}" Grid.Row="1" Grid.Column="1"></Button>
+            <Button Name="Btn6" Style="{StaticResource BasicButtonStyle}" Grid.Row="1" Grid.Column="2"></Button>
 
-            <Button Style="{StaticResource BasicButtonStyle}" Grid.Row="2" Grid.Column="0"></Button>
-            <Button Style="{StaticResource BasicButtonStyle}" Grid.Row="2" Grid.Column="1"></Button>
-            <Button Style="{StaticResource BasicButtonStyle}" Grid.Row="2" Grid.Column="2"></Button>
+            <Button Name="Btn7" Style="{StaticResource BasicButtonStyle}" Grid.Row="2" Grid.Column="0"></Button>
+            <Button Name="Btn8" Style="{StaticResource BasicButtonStyle}" Grid.Row="2" Grid.Column="1"></Button>
+            <Button Name="Btn9" Style="{StaticResource BasicButtonStyle}" Grid.Row="2" Grid.Column="2"></Button>
 
             <Line Grid.Column="0" Style="{StaticResource verticalLineStyle}"/>
             <Line Grid.Column="1" Style="{StaticResource verticalLineStyle}"/>

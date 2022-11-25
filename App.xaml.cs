@@ -15,6 +15,7 @@ namespace Simple_TikTakToe
     public partial class App : Application
     {
         int counter = 0;
+        GameLogic game = new();
 
         private void Change_Image(object sender, RoutedEventArgs e)
         {
@@ -25,11 +26,15 @@ namespace Simple_TikTakToe
                 if (counter % 2 == 0)
                 {
                     b.Content = FindResource("XImage") as Image;
+                    game.zahl_eintragen(b.Name, true);
                 }
                 else
                 {
                     b.Content = FindResource("OImage") as Image;
+                    game.zahl_eintragen(b.Name, false);
                 }
+                
+                
 
                 b.Opacity= 1;
                 b.IsEnabled = false;

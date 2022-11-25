@@ -8,12 +8,16 @@ namespace Simple_TikTakToe
 {
     internal class GameLogic
     {
-        int[,] playfield = new int[3, 3];           // 1 | 2 | 3
-        List<int> results;                          // 4 | 5 | 6
-        int spielzug = 0;                           // 7 | 8 | 9
+        int[,] playfield = new int[3, 3];           
+        List<int> results;                         
+        int spielzug = 0;
 
+        GameLogic()
+        {
+            emptyArray();
+        }
 
-        void zahl_eintragen()
+        public void zahl_eintragen(string buttonName, bool isX)
         {
 
         }
@@ -74,6 +78,18 @@ namespace Simple_TikTakToe
             else
             {
                 // weiterspielen
+            }
+        }
+
+        void emptyArray()
+        {
+            // Geht jede reihe horizontal ab und setzt 0
+            for (int y = 0; y < 3; y++)
+            {
+                for (int x = 0; x < 3; x++)
+                {
+                    playfield[y, x] = 0;
+                }
             }
         }
     }
