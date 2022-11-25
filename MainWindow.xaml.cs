@@ -16,15 +16,38 @@ using System.Windows.Shapes;
 
 namespace Simple_TikTakToe
 {
+
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window
     {
+
+
         public MainWindow()
         {
             InitializeComponent();
+            GameLogic.GameOverEvent += GameOverHandler;
         }
+
+        // event handler
+        public static void GameOverHandler(object sender, byte decider)
+        {
+            if (decider == 0)
+            {
+                // X gewonnen
+            }
+            else if (decider == 1)
+            {
+                // Kreis Gewonnen
+            }
+            else
+            {
+                //untenschieden
+            }
+        }
+
+
 
     }
 }

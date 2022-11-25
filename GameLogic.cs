@@ -8,23 +8,58 @@ namespace Simple_TikTakToe
 {
     public class GameLogic
     {
-        int[,] playfield = new int[3, 3];           
-        List<int> results;                         
-        int spielzug = 0;
+        public static event EventHandler<byte> GameOverEvent;
+
+
+        int[,] playfield = new int[3, 3];
+        List<int> results = new();
+        int spielzug;
 
         public GameLogic()
         {
             emptyArray();
+            spielzug = 0;
         }
 
         public void zahl_eintragen(string buttonName, bool isX)
         {
+            int eintragen = 0;
+            if (isX)
+            {
+                eintragen = 10;
+            }
+            else
+            {
+                eintragen = 100;
+            }
+
+            if (buttonName == "Btn1") { playfield[0, 0] = eintragen; }
+            else if (buttonName == "Btn2") { playfield[0, 1] = eintragen; }
+            else if (buttonName == "Btn3") { playfield[0, 2] = eintragen; }
+
+            else if (buttonName == "Btn4") { playfield[1, 0] = eintragen; }
+            else if (buttonName == "Btn5") { playfield[1, 1] = eintragen; }
+            else if (buttonName == "Btn6") { playfield[1, 2] = eintragen; }
+
+            else if (buttonName == "Btn7") { playfield[2, 0] = eintragen; }
+            else if (buttonName == "Btn8") { playfield[2, 1] = eintragen; }
+            else if (buttonName == "Btn9") { playfield[2, 2] = eintragen; }
+            else
+            {
+                throw new Exception("Konnte den Button keinem Feld zuweisen");
+            }
+
+            if (spielzug > 3)
+            {
+                ergebnisse_überprüfen();
+            }
+
+            spielzug++;
 
         }
 
         void ergebnisse_überprüfen()
         {
-
             // Geht jede reihe horizontal ab und addiert die 3 zahlen
             for (int y = 0; y < 3; y++)
             {
@@ -56,7 +91,7 @@ namespace Simple_TikTakToe
             results.Add(diagonalen);
 
             diagonalen = 0;
-            for (int y = 3; y > 0; y--)
+            for (int y = 2; y >= 0; y--)
             {
                 diagonalen += playfield[y, y];
             }
@@ -65,20 +100,22 @@ namespace Simple_TikTakToe
 
             if (results.Contains(300))
             {
-                //kreis wins
+                CircleWon();
             }
             else if (results.Contains(30))
             {
-                // x wins
+                XWon();
             }
-            else if(spielzug>9)
+            else if (spielzug > 9)
             {
-                // unentschieden
+                Draw();
             }
             else
             {
                 // weiterspielen
             }
+
+            results.Clear();
         }
 
         void emptyArray()
@@ -91,6 +128,21 @@ namespace Simple_TikTakToe
                     playfield[y, x] = 0;
                 }
             }
+        }
+
+        private void CircleWon()
+        {
+            GameOverEvent.Invoke(this, 1);
+        }
+
+        private void XWon()
+        {
+            GameOverEvent.Invoke(this, 0);
+        }
+
+        private void Draw()
+        {
+            GameOverEvent.Invoke(this, 8);
         }
     }
 }
