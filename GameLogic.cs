@@ -97,9 +97,12 @@ namespace Simple_TikTakToe
             results.Add(diagonalen);
 
             diagonalen = 0;
-            for (int y = 2; y >= 0; y--)
+
+            int y_diag = 2;
+            for (int x = 0; x < 3; x++)
             {
-                diagonalen += playfield[y, y];
+                diagonalen+= playfield[x, y_diag];
+                y_diag--;
             }
             results.Add(diagonalen);
 
