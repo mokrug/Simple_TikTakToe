@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Reflection.Emit;
@@ -30,9 +31,18 @@ namespace Simple_TikTakToe
         {
             InitializeComponent();
         }
+
+        private void Window_SizeChanged(object sender, SizeChangedEventArgs e)
+        {
+            if (e.WidthChanged)
+            {
+                this.Width = e.NewSize.Height;
+            }
+            else
+            {
+                this.Height = e.NewSize.Width;
+            }
+        }
     }
 }
 
-
-                
-            

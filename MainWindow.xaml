@@ -5,42 +5,45 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Simple_TikTakToe"
         mc:Ignorable="d"
-        Title="MainWindow" Height="500" Width="500" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
-    <StackPanel  x:Name="fullGrid">
-        <Grid>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"></ColumnDefinition>
-                <ColumnDefinition Width="*"></ColumnDefinition>
-                <ColumnDefinition Width="*"></ColumnDefinition>
-            </Grid.ColumnDefinitions>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="*"></RowDefinition>
-                <RowDefinition Height="*"></RowDefinition>
-                <RowDefinition Height="*"></RowDefinition>
-            </Grid.RowDefinitions>
+        Title="MainWindow" Height="500" Width="500" MinHeight="500" MinWidth="500" MaxHeight="1000" MaxWidth="1000" 
+        WindowStartupLocation="CenterScreen" SizeChanged="Window_SizeChanged">
+    <Viewbox Stretch="Uniform" StretchDirection="Both" >
+        <StackPanel  x:Name="fullGrid">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                </Grid.RowDefinitions>
 
-            <Line Grid.Column="0" Style="{StaticResource verticalLineStyle}"/>
-            <Line Grid.Column="1" Style="{StaticResource verticalLineStyle}"/>
+                <Line Grid.Column="0" Style="{StaticResource verticalLineStyle}"/>
+                <Line Grid.Column="1" Style="{StaticResource verticalLineStyle}"/>
 
-            <Line Grid.Row="0" Style="{StaticResource horizontalLineStyle}"/>
-            <Line Grid.Row="1" Style="{StaticResource horizontalLineStyle}"/>
+                <Line Grid.Row="0" Style="{StaticResource horizontalLineStyle}"/>
+                <Line Grid.Row="1" Style="{StaticResource horizontalLineStyle}"/>
 
-            <Button Name="Btn1" Style="{StaticResource BasicButtonStyle}" Grid.Row="0" Grid.Column="0"></Button>
-            <Button Name="Btn2" Style="{StaticResource BasicButtonStyle}" Grid.Row="0" Grid.Column="1"></Button>
-            <Button Name="Btn3" Style="{StaticResource BasicButtonStyle}" Grid.Row="0" Grid.Column="2"></Button>
+                <Button Name="Btn1" Style="{StaticResource BasicButtonStyle}" Grid.Row="0" Grid.Column="0"></Button>
+                <Button Name="Btn2" Style="{StaticResource BasicButtonStyle}" Grid.Row="0" Grid.Column="1"></Button>
+                <Button Name="Btn3" Style="{StaticResource BasicButtonStyle}" Grid.Row="0" Grid.Column="2"></Button>
 
-            <Button Name="Btn4" Style="{StaticResource BasicButtonStyle}" Grid.Row="1" Grid.Column="0"></Button>
-            <Button Name="Btn5" Style="{StaticResource BasicButtonStyle}" Grid.Row="1" Grid.Column="1"></Button>
-            <Button Name="Btn6" Style="{StaticResource BasicButtonStyle}" Grid.Row="1" Grid.Column="2"></Button>
-            <TextBlock x:Name="GameOverText" Style="{StaticResource WinnerText}" Grid.Row="1" Grid.ColumnSpan="3" Visibility="Hidden"/>
+                <Button Name="Btn4" Style="{StaticResource BasicButtonStyle}" Grid.Row="1" Grid.Column="0"></Button>
+                <Button Name="Btn5" Style="{StaticResource BasicButtonStyle}" Grid.Row="1" Grid.Column="1"></Button>
+                <Button Name="Btn6" Style="{StaticResource BasicButtonStyle}" Grid.Row="1" Grid.Column="2"></Button>
+                <TextBlock x:Name="GameOverText" Style="{StaticResource WinnerText}" Grid.Row="1" Grid.ColumnSpan="3" Visibility="Hidden"/>
 
-            <Button Name="Btn7" Style="{StaticResource BasicButtonStyle}" Grid.Row="2" Grid.Column="0"></Button>
-            <Button Name="Btn8" Style="{StaticResource BasicButtonStyle}" Grid.Row="2" Grid.Column="1"></Button>
-            <Button Name="Btn9" Style="{StaticResource BasicButtonStyle}" Grid.Row="2" Grid.Column="2"></Button>
+                <Button Name="Btn7" Style="{StaticResource BasicButtonStyle}" Grid.Row="2" Grid.Column="0"></Button>
+                <Button Name="Btn8" Style="{StaticResource BasicButtonStyle}" Grid.Row="2" Grid.Column="1"></Button>
+                <Button Name="Btn9" Style="{StaticResource BasicButtonStyle}" Grid.Row="2" Grid.Column="2"></Button>
 
-            
-            
-        </Grid>
-      
-    </StackPanel>
+
+
+            </Grid>
+
+        </StackPanel>
+    </Viewbox>
 </Window>
