@@ -145,8 +145,10 @@ namespace Simple_TikTakToe
 
         private void CircleWon()
         {
+            // Sends Winner to UI
+            // GameOverEvent.Invoke(this, 1);
+
             // opens a Popup Window with specific Message
-              
             GameOverWindow gameover = new GameOverWindow();
             gameover.gamefinishedreason = "Circle won the game!!!";
             gameover.ShowDialog();
@@ -156,8 +158,10 @@ namespace Simple_TikTakToe
 
         private void XWon()
         {
+            // Sends Winner to UI
+            // GameOverEvent.Invoke(this, 1);
+
             // opens a Popup Window with specific Message
-                     
             GameOverWindow gameover = new GameOverWindow();
             gameover.gamefinishedreason = "X won the game!!!";
             gameover.ShowDialog();
@@ -166,8 +170,10 @@ namespace Simple_TikTakToe
 
         private void Draw()
         {
+            // Sends Winner to UI
+            // GameOverEvent.Invoke(this, 1);
+
             // opens a Popup Window with specific Message
-                   
             GameOverWindow gameover = new GameOverWindow();
             gameover.gamefinishedreason = "Draw, nobody won!!!";
             gameover.ShowDialog();
