@@ -1,1 +1,0 @@
-Kreis und X kann aktuell noch nicht diagonal von rechts nach links unten gewinnen! 25/11/2022
