@@ -13,7 +13,6 @@ namespace Simple_TikTakToe
     {
         public static event EventHandler<byte> GameOverEvent;
 
-       
         int[,] playfield = new int[3, 3];
         List<int> results = new();
         int spielzug;
@@ -22,9 +21,11 @@ namespace Simple_TikTakToe
         {
             emptyArray();
             spielzug = 0;
+
+            App.RematchEvent += rematch_handler;
         }
 
-        public  void zahl_eintragen(string buttonName, bool isX)
+        public void zahl_eintragen(string buttonName, bool isX)
         {
             // Bei X 10 eintragen, bei O 100
             int eintragen;
@@ -146,12 +147,12 @@ namespace Simple_TikTakToe
         private void CircleWon()
         {
             // Sends Winner to UI
-            // GameOverEvent.Invoke(this, 1);
+            GameOverEvent.Invoke(this, 1);
 
-            // opens a Popup Window with specific Message
-            GameOverWindow gameover = new GameOverWindow();
-            gameover.gamefinishedreason = "Circle won the game!!!";
-            gameover.ShowDialog();
+            //// opens a Popup Window with specific Message
+            //GameOverWindow gameover = new GameOverWindow();
+            //gameover.gamefinishedreason = "Circle won the game!!!";
+            //gameover.ShowDialog();
 
 
         }
@@ -159,25 +160,31 @@ namespace Simple_TikTakToe
         private void XWon()
         {
             // Sends Winner to UI
-            // GameOverEvent.Invoke(this, 1);
+            GameOverEvent.Invoke(this, 0);
 
-            // opens a Popup Window with specific Message
-            GameOverWindow gameover = new GameOverWindow();
-            gameover.gamefinishedreason = "X won the game!!!";
-            gameover.ShowDialog();
+            //// opens a Popup Window with specific Message
+            //GameOverWindow gameover = new GameOverWindow();
+            //gameover.gamefinishedreason = "X won the game!!!";
+            //gameover.ShowDialog();
 
         }
 
         private void Draw()
         {
             // Sends Winner to UI
-            // GameOverEvent.Invoke(this, 1);
+            GameOverEvent.Invoke(this, 8);
 
-            // opens a Popup Window with specific Message
-            GameOverWindow gameover = new GameOverWindow();
-            gameover.gamefinishedreason = "Draw, nobody won!!!";
-            gameover.ShowDialog();
+            //// opens a Popup Window with specific Message
+            //GameOverWindow gameover = new GameOverWindow();
+            //gameover.gamefinishedreason = "Draw, nobody won!!!";
+            //gameover.ShowDialog();
 
+        }
+
+        private void rematch_handler(object? sender, EventArgs e)
+        {
+            emptyArray();
+            spielzug= 0;
         }
 
 
