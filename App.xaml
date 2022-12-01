@@ -26,7 +26,7 @@
                 <Setter Property="HorizontalAlignment" Value="Center"/>
                 <Setter Property="Height" Value="100"/>
                 <Setter Property="Width" Value="100"/>
-                <Setter Property="Margin" Value="30"/>
+                <Setter Property="Margin" Value="20"/>
                 <EventSetter Event="Click" Handler="Change_Image" />
                 <Setter Property="Background" Value="Transparent" />
                 <EventSetter Event="MouseEnter" Handler="Button_MouseEnter"/>
@@ -65,13 +65,13 @@
 
             <Style x:Key="WinnerText" TargetType="TextBlock">
                 <Setter Property="Foreground" Value="Black" />
-                <Setter Property="FontStretch" Value="Expanded" />
+                <Setter Property="FontStretch" Value="Normal" />
                 <Setter Property="FontSize" Value="70"/>
                 <Setter Property="HorizontalAlignment" Value="Center" />
                 <Setter Property="VerticalAlignment" Value="Center" />
                 <Setter Property="Background" Value="Gray" />
                 <Setter Property="Panel.ZIndex" Value="100"/>
-                <Setter Property="Padding" Value="20" />
+                <Setter Property="Padding" Value="10" />
             </Style>
 
             <Style x:Key="GameOverButtonStyle" TargetType="Button">
