@@ -16,6 +16,7 @@ namespace Simple_TikTakToe
     {
         int counter = 0;
         GameLogic game = new();
+        public static event EventHandler RematchEvent;
 
         private void Change_Image(object sender, RoutedEventArgs e)
         {
@@ -70,6 +71,17 @@ namespace Simple_TikTakToe
             {
                 b.Content = null;
             }
-        }          
+        }
+
+        private void ExitGame(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
+
+        private void Button_Rematch(object sender, RoutedEventArgs e)
+        {
+            counter = 0;
+            RematchEvent.Invoke(null, EventArgs.Empty);
+        }
     }
 }

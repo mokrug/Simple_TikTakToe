@@ -21,7 +21,6 @@
                 </Setter>
             </Style>
 
-
             <!-- Style der für alle gilt -->
             <Style x:Key="BasicButtonStyle" TargetType="Button" BasedOn="{StaticResource TransparentButton}">
                 <Setter Property="HorizontalAlignment" Value="Center"/>
@@ -32,6 +31,7 @@
                 <Setter Property="Background" Value="Transparent" />
                 <EventSetter Event="MouseEnter" Handler="Button_MouseEnter"/>
                 <EventSetter Event="MouseLeave" Handler="Button_MouseLeave"/>
+                <Setter Property="Opacity" Value="1"/>
             </Style>
 
             <!-- Basis Style für Line -->
@@ -74,7 +74,24 @@
                 <Setter Property="Padding" Value="20" />
             </Style>
 
+            <Style x:Key="GameOverButtonStyle" TargetType="Button">
+                <Setter Property="VerticalAlignment" Value="Center"/>
+                <Setter Property="HorizontalAlignment" Value="Center"/>
+                <Setter Property="Height" Value="50"/>
+                <Setter Property="Width" Value="100"/>
+                <Setter Property="Panel.ZIndex" Value="100"/>
+                <Setter Property="FontSize" Value="20"/>
+            </Style>
+            
+            <Style x:Key="RematchButtonStyle" TargetType="Button" BasedOn="{StaticResource GameOverButtonStyle}">
+                <Setter Property="Content" Value="Rematch"/>
+                <EventSetter Event="Click" Handler="Button_Rematch" />
+            </Style>
 
+            <Style x:Key="CancelButtonStyle" TargetType="Button" BasedOn="{StaticResource GameOverButtonStyle}">
+                <Setter Property="Content" Value="Exit"/>
+                <EventSetter Event="Click" Handler="ExitGame" />
+            </Style>
 
         </ResourceDictionary>
     </Application.Resources>
