@@ -16,32 +16,49 @@
                     <ColumnDefinition Width="*"></ColumnDefinition>
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="*"></RowDefinition>
-                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="33"></RowDefinition>
+                    <RowDefinition Height="33"></RowDefinition>
                     <RowDefinition Height="*"></RowDefinition>
                 </Grid.RowDefinitions>
+                
+                <ContentControl Name="PlayfieldControl" Grid.RowSpan="3" Grid.ColumnSpan="3">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"></RowDefinition>
+                            <RowDefinition Height="*"></RowDefinition>
+                            <RowDefinition Height="*"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        
+                        <Line Grid.Column="0" Style="{StaticResource verticalLineStyle}"/>
+                        <Line Grid.Column="1" Style="{StaticResource verticalLineStyle}"/>
 
-                <Line Grid.Column="0" Style="{StaticResource verticalLineStyle}"/>
-                <Line Grid.Column="1" Style="{StaticResource verticalLineStyle}"/>
+                        <Line Grid.Row="0" Style="{StaticResource horizontalLineStyle}"/>
+                        <Line Grid.Row="1" Style="{StaticResource horizontalLineStyle}"/>
 
-                <Line Grid.Row="0" Style="{StaticResource horizontalLineStyle}"/>
-                <Line Grid.Row="1" Style="{StaticResource horizontalLineStyle}"/>
+                        <Button Name="Btn1" Style="{StaticResource BasicButtonStyle}" Grid.Row="0" Grid.Column="0"></Button>
+                        <Button Name="Btn2" Style="{StaticResource BasicButtonStyle}" Grid.Row="0" Grid.Column="1"></Button>
+                        <Button Name="Btn3" Style="{StaticResource BasicButtonStyle}" Grid.Row="0" Grid.Column="2"></Button>
 
-                <Button Name="Btn1" Style="{StaticResource BasicButtonStyle}" Grid.Row="0" Grid.Column="0"></Button>
-                <Button Name="Btn2" Style="{StaticResource BasicButtonStyle}" Grid.Row="0" Grid.Column="1"></Button>
-                <Button Name="Btn3" Style="{StaticResource BasicButtonStyle}" Grid.Row="0" Grid.Column="2"></Button>
+                        <Button Name="Btn4" Style="{StaticResource BasicButtonStyle}" Grid.Row="1" Grid.Column="0"></Button>
+                        <Button Name="Btn5" Style="{StaticResource BasicButtonStyle}" Grid.Row="1" Grid.Column="1"></Button>
+                        <Button Name="Btn6" Style="{StaticResource BasicButtonStyle}" Grid.Row="1" Grid.Column="2"></Button>
 
-                <Button Name="Btn4" Style="{StaticResource BasicButtonStyle}" Grid.Row="1" Grid.Column="0"></Button>
-                <Button Name="Btn5" Style="{StaticResource BasicButtonStyle}" Grid.Row="1" Grid.Column="1"></Button>
-                <Button Name="Btn6" Style="{StaticResource BasicButtonStyle}" Grid.Row="1" Grid.Column="2"></Button>
+
+                        <Button Name="Btn7" Style="{StaticResource BasicButtonStyle}" Grid.Row="2" Grid.Column="0"></Button>
+                        <Button Name="Btn8" Style="{StaticResource BasicButtonStyle}" Grid.Row="2" Grid.Column="1"></Button>
+                        <Button Name="Btn9" Style="{StaticResource BasicButtonStyle}" Grid.Row="2" Grid.Column="2"></Button>
+                    </Grid>
+                </ContentControl>
+                
                 <TextBlock x:Name="GameOverText" Style="{StaticResource WinnerText}" Grid.Row="1" Grid.ColumnSpan="3" Visibility="Hidden"/>
 
-                <Button Name="Btn7" Style="{StaticResource BasicButtonStyle}" Grid.Row="2" Grid.Column="0"></Button>
-                <Button Name="Btn8" Style="{StaticResource BasicButtonStyle}" Grid.Row="2" Grid.Column="1"></Button>
-                <Button Name="Btn9" Style="{StaticResource BasicButtonStyle}" Grid.Row="2" Grid.Column="2"></Button>
-
-
-
+                <Button Name="Rematch" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2"  Style="{StaticResource RematchButtonStyle}" Visibility="Hidden"></Button>
+                <Button Name="Exit" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2"  Style="{StaticResource CancelButtonStyle}" Visibility="Hidden"></Button>
             </Grid>
 
         </StackPanel>
