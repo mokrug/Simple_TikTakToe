@@ -154,6 +154,14 @@ namespace Simple_TikTakToe
             {
                 exitButton.Visibility = Visibility.Visible;
             }
+
+            if (playbuttonList != null)
+            {
+                foreach (Button btn in playbuttonList)
+                {
+                    btn.IsEnabled = false;
+                }
+            }
         }
 
         private void RematchHandler(object? sender, EventArgs e)
