@@ -5,10 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Simple_TikTakToe"
         mc:Ignorable="d"
-        Title="MainWindow" Height="500" Width="500" MinHeight="500" MinWidth="500" MaxHeight="1000" MaxWidth="1000" 
+        Title="MainWindow" Height="500" Width="500" MinHeight="500" MinWidth="500" 
         WindowStartupLocation="CenterScreen" SizeChanged="Window_SizeChanged">
     <Viewbox Stretch="Uniform" StretchDirection="Both" >
-        <StackPanel  x:Name="fullGrid">
+        <StackPanel x:Name="fullGrid">
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"></ColumnDefinition>
