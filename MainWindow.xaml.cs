@@ -52,7 +52,7 @@ namespace Simple_TikTakToe
         {
             InitializeComponent();
 
-            // get objects inside Window
+            // get iportant objects inside Window
             winnerText = FindName("GameOverText") as TextBlock;
             rematchButton = FindName("Rematch") as Button;
             exitButton = FindName("Exit") as Button;
@@ -60,6 +60,7 @@ namespace Simple_TikTakToe
 
             LoadButtons();
 
+            // Auf Events registrieren 
             GameLogic.GameOverEvent += GameOverHandler;
             App.RematchEvent += RematchHandler;
         }
@@ -67,6 +68,7 @@ namespace Simple_TikTakToe
         #region Init
         private void LoadButtons()
         {
+            // Lädt jeden Button aus der UI anhand des Namens in eine Liste
             if (playbuttonList != null)
             {
                 playButton1 = FindName("Btn1") as Button;
@@ -105,6 +107,7 @@ namespace Simple_TikTakToe
         #region Methods
         private void Window_SizeChanged(object? sender, SizeChangedEventArgs e)
         {
+            // hält Window Size immer in 1:1 Format
             if (e.WidthChanged) { this.Width = e.NewSize.Height; }
             else { this.Height = e.NewSize.Width; }
         }
@@ -144,17 +147,19 @@ namespace Simple_TikTakToe
                 winnerText.Visibility = Visibility.Visible;
             }
 
+            // Rematch Button aktivieren
             if (rematchButton != null)
             {
                 rematchButton.Visibility = Visibility.Visible;
             }
 
-
+            // Exit Button aktivieren
             if (exitButton != null)
             {
                 exitButton.Visibility = Visibility.Visible;
             }
 
+            // Play Buttons deaktivieren damit preview sich nicht ändert
             if (playbuttonList != null)
             {
                 foreach (Button btn in playbuttonList)
@@ -166,6 +171,7 @@ namespace Simple_TikTakToe
 
         private void RematchHandler(object? sender, EventArgs e)
         {
+            // Rematch Buttons + Ergebnisanzeige Verstecken
             if (winnerText != null)
             {
                 winnerText.Visibility = Visibility.Hidden;
@@ -179,11 +185,13 @@ namespace Simple_TikTakToe
                 exitButton.Visibility = Visibility.Hidden;
             }
 
+            // Opacity wieder auf 1 setzen
             if (playfieldControl != null)
             {
                 playfieldControl.Opacity = 1;
             }
 
+            // Jeden Play Button leeren und Enablen
             if (playbuttonList != null)
             {
                 foreach (Button btn in playbuttonList)

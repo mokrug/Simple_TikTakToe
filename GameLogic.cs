@@ -19,9 +19,13 @@ namespace Simple_TikTakToe
 
         public GameLogic()
         {
+            // Leeres Array für das Spielfeld generieren
             emptyArray();
+
+            // Spielzug counter auf 0 setzen
             spielzug = 0;
 
+            // Rematch Event subscriben
             App.RematchEvent += rematch_handler;
         }
 
@@ -55,7 +59,7 @@ namespace Simple_TikTakToe
                 throw new Exception("Konnte den Button keinem Feld zuweisen");
             }
 
-            // frühestens nach spielzug 4 
+            // frühestens nach spielzug 4 ist gewinnen möglich
             if (spielzug > 3)
             {
                 ergebnisse_überprüfen();
@@ -89,7 +93,7 @@ namespace Simple_TikTakToe
                 results.Add(yzahl);
             }
 
-            // Überprüfung der diagonalen
+            // Überprüfung der diagonalen rechts oben -> links unten
             int diagonalen = 0;
             for (int y = 0; y < 3; y++)
             {
@@ -97,8 +101,8 @@ namespace Simple_TikTakToe
             }
             results.Add(diagonalen);
 
+            // Überprüfung der diagonalen rechts unten -> links oben
             diagonalen = 0;
-
             int y_diag = 2;
             for (int x = 0; x < 3; x++)
             {
@@ -107,32 +111,32 @@ namespace Simple_TikTakToe
             }
             results.Add(diagonalen);
 
-
+            // Wenn 3 mal O in einer Reihe -> dann 300 in Ergebnissen => O gewinnt 
             if (results.Contains(300))
             {
                 CircleWon();
                 spielzug = 0;
             }
+            // Wenn 3 mal X in einer Reihe -> dann 30 in Ergebnissen => X gewinnt
             else if (results.Contains(30))
             {
                 XWon();
                 spielzug = 0;
             }
+            // Wenn Spielzug auf 8 => 9 Züge => Spiel unentschieden
             else if (spielzug > 7)
             {
                 Draw();
                 spielzug = 0;
             }
-            else
-            {
-                // weiterspielen
-            }
 
-            // Liste clearen für nächsten durchlauf
+            // Sonst weiterspielen
+
+            // Liste clearen für nächsten Spielzug
             results.Clear();
         }
 
-        async void emptyArray()
+        private void emptyArray()
         {
             // Geht jede reihe horizontal ab und setzt 0
             for (int y = 0; y < 3; y++)
@@ -146,7 +150,7 @@ namespace Simple_TikTakToe
 
         private void CircleWon()
         {
-            // Sends Winner to UI
+            // Sendet Winner an UI (1 = O)
             GameOverEvent.Invoke(this, 1);
 
             //// opens a Popup Window with specific Message
@@ -159,7 +163,7 @@ namespace Simple_TikTakToe
 
         private void XWon()
         {
-            // Sends Winner to UI
+            // Sendet Winner an UI (0 = X)
             GameOverEvent.Invoke(this, 0);
 
             //// opens a Popup Window with specific Message
@@ -171,7 +175,7 @@ namespace Simple_TikTakToe
 
         private void Draw()
         {
-            // Sends Winner to UI
+            // Sendet Winner an UI (Weder 0 oder 1 = Unentspieden)
             GameOverEvent.Invoke(this, 8);
 
             //// opens a Popup Window with specific Message
@@ -183,6 +187,7 @@ namespace Simple_TikTakToe
 
         private void rematch_handler(object? sender, EventArgs e)
         {
+            // Bei rematch Spielfeld leeren und Spielzug auf 0 setzen
             emptyArray();
             spielzug= 0;
         }
